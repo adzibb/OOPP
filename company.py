@@ -1,10 +1,14 @@
+# The parent class
 class Company:
+    """A company could have a manager and employees"""
     def __init__(self, name, location):
         self.name = name
         self.location = location
 
 
+# Child class
 class Manager(Company):
+    """A manager belongs to a company in a specific geographical area"""
     def __init__(self, name, number_managers, company_name, company_location):
         super(Manager, self).__init__(company_name, company_location)
         self._name = name
@@ -18,7 +22,9 @@ class Manager(Company):
                 '\nLocation of Company: ' + self.location)
 
 
+# child class
 class Employee(Company):
+    """An employee works in a company under a manager"""
     def __init__(self, name, age, gender, role, company_name, company_location):
         self._name = name
         self.age = age
